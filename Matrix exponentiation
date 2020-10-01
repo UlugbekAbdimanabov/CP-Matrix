@@ -1,0 +1,11 @@
+using mat = vector<vector<ll>>;
+
+mat matmul(const mat &a, const mat &b)
+{
+	mat c(a.size(),vector<ll>(b[0].size()));
+	rep(i,0,a.size())
+		rep(j,0,b[0].size())
+			rep(k,0,a[0].size())
+				c[i][j] = modlaber(c[i][j]+a[i][k]*b[k][j]);
+	rt c;
+}
