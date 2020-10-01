@@ -9,3 +9,13 @@ mat matmul(const mat &a, const mat &b)
 				c[i][j] = modlaber(c[i][j]+a[i][k]*b[k][j]);
 	rt c;
 }
+
+mat matpow(mat a, ll n)
+{
+	if(n == 1)
+		rt a;
+	elif(n&1)
+		rt matmul(a,matpow(a,n-1));
+	else
+		rt matpow(matmul(a,a),n/2);
+}
